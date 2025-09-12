@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to C Quiz | DevVerse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef1f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .question {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h3 {
+            margin-top: 0;
+        }
+
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
+
+        button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            background: #ccc;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Introduction to C - Quiz</h1>
+    <p>Time Remaining: <span id="timer">15:00</span></p>
+</header>
+
+<main>
+    <form id="quizForm">
+        <!-- 15 Questions -->
+        <div class="question">
+            <h3>1. Who developed the C language?</h3>
+            <label><input type="radio" name="q1" value="true"> Dennis Ritchie</label><br>
+            <label><input type="radio" name="q1" value="false"> James Gosling</label><br>
+            <label><input type="radio" name="q1" value="false"> Bjarne Stroustrup</label><br>
+            <label><input type="radio" name="q1" value="false"> Ken Thompson</label>
+        </div>
+
+        <div class="question">
+            <h3>2. When was the C language developed?</h3>
+            <label><input type="radio" name="q2" value="false"> 1969</label><br>
+            <label><input type="radio" name="q2" value="true"> 1972</label><br>
+            <label><input type="radio" name="q2" value="false"> 1983</label><br>
+            <label><input type="radio" name="q2" value="false"> 1990</label>
+        </div>
+
+        <div class="question">
+            <h3>3. C language was developed at?</h3>
+            <label><input type="radio" name="q3" value="false"> MIT</label><br>
+            <label><input type="radio" name="q3" value="false"> Microsoft</label><br>
+            <label><input type="radio" name="q3" value="true"> Bell Labs</label><br>
+            <label><input type="radio" name="q3" value="false"> Harvard</label>
+        </div>
+
+        <div class="question">
+            <h3>4. Which language is the predecessor of C?</h3>
+            <label><input type="radio" name="q4" value="false"> Java</label><br>
+            <label><input type="radio" name="q4" value="true"> B</label><br>
+            <label><input type="radio" name="q4" value="false"> C++</label><br>
+            <label><input type="radio" name="q4" value="false"> FORTRAN</label>
+        </div>
+
+        <div class="question">
+            <h3>5. C is a _______ level programming language.</h3>
+            <label><input type="radio" name="q5" value="true"> Middle</label><br>
+            <label><input type="radio" name="q5" value="false"> High</label><br>
+            <label><input type="radio" name="q5" value="false"> Low</label><br>
+            <label><input type="radio" name="q5" value="false"> Object Oriented</label>
+        </div>
+
+        <div class="question">
+            <h3>6. Which of the following is not a keyword in C?</h3>
+            <label><input type="radio" name="q6" value="false"> int</label><br>
+            <label><input type="radio" name="q6" value="true"> class</label><br>
+            <label><input type="radio" name="q6" value="false"> void</label><br>
+            <label><input type="radio" name="q6" value="false"> float</label>
+        </div>
+
+        <div class="question">
+            <h3>7. Which of the following symbol is used to denote a preprocessor directive?</h3>
+            <label><input type="radio" name="q7" value="true"> #</label><br>
+            <label><input type="radio" name="q7" value="false"> @</label><br>
+            <label><input type="radio" name="q7" value="false"> $</label><br>
+            <label><input type="radio" name="q7" value="false"> *</label>
+        </div>
+
+        <div class="question">
+            <h3>8. Which function is used to print output to the screen?</h3>
+            <label><input type="radio" name="q8" value="true"> printf()</label><br>
+            <label><input type="radio" name="q8" value="false"> cout</label><br>
+            <label><input type="radio" name="q8" value="false"> display()</label><br>
+            <label><input type="radio" name="q8" value="false"> write()</label>
+        </div>
+
+        <div class="question">
+            <h3>9. What does .c extension represent?</h3>
+            <label><input type="radio" name="q9" value="true"> C source file</label><br>
+            <label><input type="radio" name="q9" value="false"> Compiled file</label><br>
+            <label><input type="radio" name="q9" value="false"> Header file</label><br>
+            <label><input type="radio" name="q9" value="false"> Class file</label>
+        </div>
+
+        <div class="question">
+            <h3>10. Which one is a valid variable name in C?</h3>
+            <label><input type="radio" name="q10" value="true"> my_var</label><br>
+            <label><input type="radio" name="q10" value="false"> 2var</label><br>
+            <label><input type="radio" name="q10" value="false"> var-name</label><br>
+            <label><input type="radio" name="q10" value="false"> @var</label>
+        </div>
+
+        <div class="question">
+            <h3>11. Which header file is required for printf()?</h3>
+            <label><input type="radio" name="q11" value="true"> stdio.h</label><br>
+            <label><input type="radio" name="q11" value="false"> conio.h</label><br>
+            <label><input type="radio" name="q11" value="false"> stdlib.h</label><br>
+            <label><input type="radio" name="q11" value="false"> string.h</label>
+        </div>
+
+        <div class="question">
+            <h3>12. Which operator is used to assign a value?</h3>
+            <label><input type="radio" name="q12" value="true"> =</label><br>
+            <label><input type="radio" name="q12" value="false"> ==</label><br>
+            <label><input type="radio" name="q12" value="false"> :=</label><br>
+            <label><input type="radio" name="q12" value="false"> +=</label>
+        </div>
+
+        <div class="question">
+            <h3>13. C is a ________ typed language.</h3>
+            <label><input type="radio" name="q13" value="true"> Statically</label><br>
+            <label><input type="radio" name="q13" value="false"> Dynamically</label><br>
+            <label><input type="radio" name="q13" value="false"> Loosely</label><br>
+            <label><input type="radio" name="q13" value="false"> Functionally</label>
+        </div>
+
+        <div class="question">
+            <h3>14. What is the default return type of main() in C?</h3>
+            <label><input type="radio" name="q14" value="true"> int</label><br>
+            <label><input type="radio" name="q14" value="false"> void</label><br>
+            <label><input type="radio" name="q14" value="false"> float</label><br>
+            <label><input type="radio" name="q14" value="false"> char</label>
+        </div>
+
+        <div class="question">
+            <h3>15. Which of the following is correct comment syntax in C?</h3>
+            <label><input type="radio" name="q15" value="true"> /* comment */</label><br>
+            <label><input type="radio" name="q15" value="false"> // comment</label><br>
+            <label><input type="radio" name="q15" value="false"> <!-- comment --></label><br>
+            <label><input type="radio" name="q15" value="false"> # comment</label>
+        </div>
+
+        <div style="text-align:center;">
+            <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+    </form>
+
+	<div class="result" id="result"></div>
+
+	<!-- Try Again button hidden initially -->
+	<div style="text-align:center; margin-top: 10px; display:none;" id="retryBtn">
+	    <button onclick="location.reload()">Try Again</button>
+	</div>
+
+</main>
+
+<footer>
+    <a href="/quiz">⬅ Back to Quiz Topics</a>
+</footer>
+
+<script>
+    let timeLeft = 15 * 60;
+    const timerElement = document.getElementById("timer");
+
+    const timer = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            submitQuiz();
+        }
+
+        timeLeft--;
+    }, 1000);
+
+	function submitQuiz() {
+	    clearInterval(timer);
+	    let score = 0;
+	    const formData = new FormData(document.getElementById("quizForm"));
+	    for (let [_, value] of formData.entries()) {
+	        if (value === "true") score++;
+	    }
+
+	    let resultText = `Score: ${score}/15 — `;
+	    resultText += (score <= 5) ? "<span style='color:red;'>Failed</span>" : "<span style='color:green;'>Great!</span>";
+	    document.getElementById("result").innerHTML = resultText;
+
+	    document.querySelectorAll("input").forEach(input => input.disabled = true);
+
+	    // ✅ Show Try Again button
+	    document.getElementById("retryBtn").style.display = "block";
+	}
+
+</script>
+
+</body>
+</html>

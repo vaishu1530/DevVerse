@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>C Notes Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f4f7;
+        }
+        .header {
+            background-color: #007bff; /* Blue header */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid #0056b3;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .topic-card {
+            background-color: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            padding: 18px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .topic-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .topic-card a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.2em;
+            display: block;
+        }
+        .topic-card a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>📘 Learn C Programming</h1>
+        <p>Select a topic below to get started:</p>
+    </div>
+
+    <div class="container">
+        <div class="topic-card">
+            <a th:href="@{/notes/introduction}">Introduction to C</a>
+        </div>
+        <div class="topic-card">
+            <a th:href="@{/notes/variables}">Variables in C</a>
+        </div>
+        <div class="topic-card">
+            <a th:href="@{/notes/datatypes}">Data Types in C</a>
+        </div>
+        <div class="topic-card">
+            <a th:href="@{/notes/operators}">Operators in C</a>
+        </div>
+        
+        <div class="topic-card">
+            <a th:href="@{/notes/arrays}">Arrays in C</a>
+        </div>
+        <!-- Add more topic cards here -->
+    </div>
+	<div style="text-align: center; padding: 20px;">
+	    <a href="/" style="
+	        padding: 10px 20px;
+	        font-size: 1em;
+	        background-color: #007bff;
+	        color: white;
+	        border-radius: 5px;
+	        text-decoration: none;
+	        transition: background-color 0.3s;
+	    " onmouseover="this.style.backgroundColor='#0056b3';" onmouseout="this.style.backgroundColor='#007bff';">
+	        ⬅️ Back
+	    </a>
+	</div>
+
+
+</body>
+</html>

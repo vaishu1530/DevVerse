@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops in C - DevVerse</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .content {
+            max-width: 900px;
+            margin: auto;
+            background-color: #f5f9ff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #eef3f8;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Loops in C</h1>
+
+        <p>
+            Loops are used to execute a block of code repeatedly as long as a given condition is true. They help avoid code repetition.
+        </p>
+
+        <h2>Types of Loops:</h2>
+        <ul>
+            <li><strong>for</strong> loop</li>
+            <li><strong>while</strong> loop</li>
+            <li><strong>do...while</strong> loop</li>
+        </ul>
+
+        <h2>1. <code>for</code> Loop Syntax</h2>
+        <pre><code>for(initialization; condition; increment) {
+    // code to be executed
+}</code></pre>
+        <h4>Example:</h4>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    for(int i = 1; i <= 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}</code></pre>
+
+        <h2>2. <code>while</code> Loop Syntax</h2>
+        <pre><code>while(condition) {
+    // code to be executed
+}</code></pre>
+        <h4>Example:</h4>
+        <pre><code>int i = 1;
+while(i <= 5) {
+    printf("%d\n", i);
+    i++;
+}</code></pre>
+
+        <h2>3. <code>do...while</code> Loop Syntax</h2>
+        <pre><code>do {
+    // code to be executed
+} while(condition);</code></pre>
+        <h4>Example:</h4>
+        <pre><code>int i = 1;
+do {
+    printf("%d\n", i);
+    i++;
+} while(i <= 5);</code></pre>
+
+        <h2>More Info</h2>
+        <ul>
+            <li><code>for</code> loop is used when the number of iterations is known.</li>
+            <li><code>while</code> and <code>do...while</code> are used when condition-based repetition is needed.</li>
+            <li><code>do...while</code> executes at least once even if the condition is false initially.</li>
+        </ul>
+
+        <div class="nav-buttons">
+            <a th:href="@{/learn/functions}" class="btn">← Back to functions</a>
+            <a th:href="@{/learn/pointers}" class="btn">Next to pointers →</a>
+        </div>
+    </div>
+</body>
+</html>

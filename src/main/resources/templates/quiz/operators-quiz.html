@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators and Expressions - Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .timer {
+            font-size: 16px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: black;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .back-btn {
+            background-color: #add8e6;
+            color: black;
+        }
+
+        .submit-btn {
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        .try-again-btn {
+            background-color: #4caf50;
+            color: white;
+            display: none;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Operators and Expressions in C - Quiz</h1>
+        <div class="timer">Time Remaining: <span id="timer" class="red">15:00</span></div>
+    </header>
+
+    <form class="quiz-container" id="quizForm">
+        <div class="question"><h3>1. Which operator is used to assign a value to a variable?</h3>
+            <label><input type="radio" name="q1" value="="> =</label><br>
+            <label><input type="radio" name="q1" value="=="> ==</label><br>
+            <label><input type="radio" name="q1" value="!="> !=</label><br>
+            <label><input type="radio" name="q1" value="++"> ++</label>
+        </div>
+
+        <div class="question"><h3>2. Which operator is used to add two values?</h3>
+            <label><input type="radio" name="q2" value="+"> +</label><br>
+            <label><input type="radio" name="q2" value="-"> -</label><br>
+            <label><input type="radio" name="q2" value="*"> *</label><br>
+            <label><input type="radio" name="q2" value="%"> %</label>
+        </div>
+
+        <div class="question"><h3>3. What is the result of 5 % 2?</h3>
+            <label><input type="radio" name="q3" value="1"> 1</label><br>
+            <label><input type="radio" name="q3" value="2"> 2</label><br>
+            <label><input type="radio" name="q3" value="0"> 0</label><br>
+            <label><input type="radio" name="q3" value="3"> 3</label>
+        </div>
+
+        <div class="question"><h3>4. Which of the following is a logical AND operator?</h3>
+            <label><input type="radio" name="q4" value="&&"> &&</label><br>
+            <label><input type="radio" name="q4" value="||"> ||</label><br>
+            <label><input type="radio" name="q4" value="!"> !</label><br>
+            <label><input type="radio" name="q4" value="&"> &</label>
+        </div>
+
+        <div class="question"><h3>5. Which of the following is a ternary operator?</h3>
+            <label><input type="radio" name="q5" value="? :"> ? :</label><br>
+            <label><input type="radio" name="q5" value="++"> ++</label><br>
+            <label><input type="radio" name="q5" value="--"> --</label><br>
+            <label><input type="radio" name="q5" value="&&"> &&</label>
+        </div>
+
+        <div class="question"><h3>6. What does the expression (a += 5) mean?</h3>
+            <label><input type="radio" name="q6" value="a = a + 5"> a = a + 5</label><br>
+            <label><input type="radio" name="q6" value="a = 5"> a = 5</label><br>
+            <label><input type="radio" name="q6" value="a + 5 = a"> a + 5 = a</label><br>
+            <label><input type="radio" name="q6" value="Invalid"> Invalid</label>
+        </div>
+
+        <div class="question"><h3>7. Which operator is used to check equality?</h3>
+            <label><input type="radio" name="q7" value="=="> ==</label><br>
+            <label><input type="radio" name="q7" value="="> =</label><br>
+            <label><input type="radio" name="q7" value="!="> !=</label><br>
+            <label><input type="radio" name="q7" value="<"> <</label>
+        </div>
+
+        <div class="question"><h3>8. What is the output of 10 / 3 in C?</h3>
+            <label><input type="radio" name="q8" value="3"> 3</label><br>
+            <label><input type="radio" name="q8" value="3.33"> 3.33</label><br>
+            <label><input type="radio" name="q8" value="3.0"> 3.0</label><br>
+            <label><input type="radio" name="q8" value="Error"> Error</label>
+        </div>
+
+        <div class="question"><h3>9. What does the ++ operator do?</h3>
+            <label><input type="radio" name="q9" value="Increments by 1"> Increments by 1</label><br>
+            <label><input type="radio" name="q9" value="Adds 2"> Adds 2</label><br>
+            <label><input type="radio" name="q9" value="Decreases by 1"> Decreases by 1</label><br>
+            <label><input type="radio" name="q9" value="Divides by 2"> Divides by 2</label>
+        </div>
+
+        <div class="question"><h3>10. Which of the following is a bitwise operator?</h3>
+            <label><input type="radio" name="q10" value="&"> &</label><br>
+            <label><input type="radio" name="q10" value="&&"> &&</label><br>
+            <label><input type="radio" name="q10" value="=="> ==</label><br>
+            <label><input type="radio" name="q10" value="!="> !=</label>
+        </div>
+
+        <div class="question"><h3>11. Which operator returns remainder?</h3>
+            <label><input type="radio" name="q11" value="%"> %</label><br>
+            <label><input type="radio" name="q11" value="/"> /</label><br>
+            <label><input type="radio" name="q11" value="*"> *</label><br>
+            <label><input type="radio" name="q11" value="+"> +</label>
+        </div>
+
+        <div class="question"><h3>12. What is the output of (5 > 3) && (2 < 4)?</h3>
+            <label><input type="radio" name="q12" value="true"> true</label><br>
+            <label><input type="radio" name="q12" value="false"> false</label><br>
+            <label><input type="radio" name="q12" value="error"> error</label><br>
+            <label><input type="radio" name="q12" value="None"> None</label>
+        </div>
+
+        <div class="question"><h3>13. What does the ! operator mean?</h3>
+            <label><input type="radio" name="q13" value="Not"> Not</label><br>
+            <label><input type="radio" name="q13" value="And"> And</label><br>
+            <label><input type="radio" name="q13" value="Or"> Or</label><br>
+            <label><input type="radio" name="q13" value="None"> None</label>
+        </div>
+
+        <div class="question"><h3>14. Which operator is used to subtract?</h3>
+            <label><input type="radio" name="q14" value="-"> -</label><br>
+            <label><input type="radio" name="q14" value="+"> +</label><br>
+            <label><input type="radio" name="q14" value="*"> *</label><br>
+            <label><input type="radio" name="q14" value="/"> /</label>
+        </div>
+
+        <div class="question"><h3>15. Which operator is used to multiply?</h3>
+            <label><input type="radio" name="q15" value="*"> *</label><br>
+            <label><input type="radio" name="q15" value="%"> %</label><br>
+            <label><input type="radio" name="q15" value="+"> +</label><br>
+            <label><input type="radio" name="q15" value="-"> -</label>
+        </div>
+
+        <div id="result"></div>
+        <div class="buttons">
+            <button type="submit" class="btn submit-btn">Submit</button>
+			<a href="/quiz">⬅ Back to Quiz Topics</a>
+            <button type="button" id="tryAgain" class="btn try-again-btn" onclick="location.reload()">Try Again</button>
+        </div>
+    </form>
+
+    <script>
+        const correctAnswers = ["=", "+", "1", "&&", "? :", "a = a + 5", "==", "3", "Increments by 1", "&", "%", "true", "Not", "-", "*"];
+        let timeLeft = 900;
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById("timer").textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft === 0) {
+                clearInterval(timerInterval);
+                evaluateQuiz();
+            }
+            timeLeft--;
+        }
+
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            clearInterval(timerInterval);
+            evaluateQuiz();
+        });
+
+        function evaluateQuiz() {
+            let score = 0;
+            correctAnswers.forEach((answer, index) => {
+                const questionNum = index + 1;
+                const selected = document.querySelector(`input[name="q${questionNum}"]:checked`);
+                if (selected && selected.value === answer) {
+                    score++;
+                }
+            });
+
+            const resultText = score <= 5 ? "Fail" : "Great!";
+            document.getElementById("result").textContent = `Score: ${score}/15 - ${resultText}`;
+            document.getElementById("tryAgain").style.display = "inline-block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Storage Classes in C</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: white;
+            color: #000;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #0d47a1;
+            border-bottom: 3px solid #0d47a1;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .code-box {
+            background-color: #e3f2fd;
+            border-left: 6px solid #0d47a1;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .nav-buttons a {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #1565c0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #0d47a1;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #bbdefb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Storage Classes in C</h1>
+
+    <div class="section">
+        <p>
+            In C, <strong>storage classes</strong> define the scope, lifetime, and visibility of variables or functions. They tell the compiler how to store the variable and how long it should be active in memory.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>1. Types of Storage Classes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Storage Class</th>
+                    <th>Scope</th>
+                    <th>Lifetime</th>
+                    <th>Default Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>auto</td>
+                    <td>Local</td>
+                    <td>Within block</td>
+                    <td>Garbage value</td>
+                </tr>
+                <tr>
+                    <td>register</td>
+                    <td>Local</td>
+                    <td>Within block</td>
+                    <td>Garbage value</td>
+                </tr>
+                <tr>
+                    <td>static</td>
+                    <td>Local/Global</td>
+                    <td>Entire program</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>extern</td>
+                    <td>Global</td>
+                    <td>Entire program</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>2. Example Code: Using static</h2>
+        <div class="code-box">
+#include &lt;stdio.h&gt;
+
+void counter() {
+    static int count = 0;
+    count++;
+    printf("Count: %d\n", count);
+}
+
+int main() {
+    counter();
+    counter();
+    counter();
+    return 0;
+}
+        </div>
+        <p><strong>Output:</strong><br>Count: 1<br>Count: 2<br>Count: 3</p>
+        <p><strong>Explanation:</strong> The variable <code>count</code> retains its value between function calls because it's declared as <code>static</code>.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Explanation of Each Class</h2>
+        <ul>
+            <li><strong>auto:</strong> Default for local variables inside functions. Memory allocated on stack.</li>
+            <li><strong>register:</strong> Stores variable in CPU register for faster access (hint to compiler).</li>
+            <li><strong>static:</strong> Retains value across multiple function calls. Memory allocated only once.</li>
+            <li><strong>extern:</strong> Declares a global variable defined in another file.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Tips</h2>
+        <ul>
+            <li>Use <code>static</code> to preserve variable values across function calls.</li>
+            <li>Use <code>extern</code> for accessing global variables across files.</li>
+            <li><code>register</code> may not always use a register—it's just a request to the compiler.</li>
+        </ul>
+    </div>
+
+    <div class="nav-buttons">
+        <a th:href="@{/learn/recursion}">Back to recursion</a>
+        <a th:href="@{/learn/enum}">Next to enum</a>
+    </div>
+
+</body>
+</html>

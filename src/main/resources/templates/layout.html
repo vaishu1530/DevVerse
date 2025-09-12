@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevVerse - Responsive</title>
+
+  <style>
+    /* ---------- Reset & safety ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background: #f2f6fb; color: #0f1724; }
+
+    :root {
+      --blue: #1e88e5;
+      --blue-dark: #0f6fc4;
+      --muted: #6b7280;
+      --max: 1200px;
+      --gap: 16px;
+    }
+
+    /* ---------- Layout container ---------- */
+    .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+    /* ---------- Header ---------- */
+    header.site-header {
+      background: var(--blue);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+    }
+    .brand { font-weight: 700; font-size: 1.15rem; text-decoration: none; color: #fff; }
+    /* desktop nav */
+    nav.main-nav { display: flex; gap: 18px; align-items:center; }
+    nav.main-nav a { color: #fff; text-decoration: none; font-weight: 600; padding: 6px 4px; }
+    .nav-cta { border: 1px solid rgba(255,255,255,0.18); padding: 6px 10px; border-radius: 8px; color:#fff; text-decoration:none; }
+
+    /* hamburger (mobile) */
+    .hambtn { background: transparent; border: 0; color: #fff; font-size: 20px; cursor:pointer; display: inline-flex; align-items:center; padding:6px; }
+    .hambtn:focus { outline: 3px solid rgba(255,255,255,0.12); outline-offset:3px; border-radius:6px; }
+
+    /* ---------- Mobile nav dropdown (pushes content down) ---------- */
+    .mobile-nav {
+      display: none; /* shown only on mobile via JS */
+      width: 100%;
+      background: var(--blue);
+      padding: 10px 0 16px;
+      box-shadow: 0 6px 18px rgba(14,30,37,0.06);
+    }
+    .mobile-nav a { display:block; color:#fff; padding:10px 16px; text-decoration:none; font-weight:600; }
+    .mobile-nav a + a { margin-top:6px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      margin: 16px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(30,136,229,0.12), rgba(30,136,229,0.04));
+    }
+    .hero-inner { padding: 28px 16px; }
+    .hero h1 { margin:0 0 6px; font-size: 1.6rem; color: var(--blue-dark); }
+    .hero p { margin:0; color: var(--muted); }
+
+    /* ---------- Cards / Grid ---------- */
+    .topics { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 18px 0 28px; }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(14,30,37,0.06);
+      text-align: center;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .card p { margin: 0 0 12px; color: var(--muted); }
+
+    .btn { display:inline-block; padding: 8px 14px; border-radius: 8px; font-weight:600; text-decoration:none; cursor:pointer; }
+    .btn-primary { background: var(--blue); color:#fff; border: none; }
+    .btn-outline { background: transparent; color: var(--blue); border: 1px solid var(--blue); }
+
+    /* ---------- Footer ---------- */
+    footer.site-footer { padding: 16px 0; text-align:center; color:var(--muted); margin-top:20px; }
+
+    /* ---------- Responsive rules ---------- */
+    @media (min-width: 720px) {
+      .hero-inner { padding: 36px 20px; }
+      .hero h1 { font-size: 2rem; }
+      .topics { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 719px) {
+      /* hide desktop nav, show hamburger */
+      nav.main-nav { display: none; }
+      .hambtn { display: inline-flex; }
+    }
+    @media (min-width: 720px) {
+      .hambtn { display: none; }
+      .mobile-nav { display: none !important; } /* ensure hidden on desktop */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">DevVerse</a>
+
+      <!-- desktop nav -->
+      <nav class="main-nav" role="navigation" aria-label="Main">
+        <a href="#">Home</a>
+        <a href="#">Learn</a>
+        <a href="#">Practice</a>
+        <a href="#">Quiz</a>
+        <a href="#" class="nav-cta">Login</a>
+      </nav>
+
+      <!-- hamburger for mobile -->
+      <button id="hambtn" class="hambtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+
+    <!-- mobile nav (inserted in header so it pushes content down when opened) -->
+    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+      <div class="wrap">
+        <a href="#">Home</a>
+        <a href="#">Learn</a>
+        <a href="#">Practice</a>
+        <a href="#">Quiz</a>
+        <a href="#">Contact</a>
+        <a href="#" class="nav-cta">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main role="main" class="wrap" style="padding-bottom:28px;">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <h1>Welcome to DevVerse</h1>
+        <p>Your ultimate C programming learning platform — responsive and mobile-friendly.</p>
+      </div>
+    </section>
+
+    <section class="topics" aria-label="Main topics">
+      <article class="card">
+        <h3>📘 Learn C</h3>
+        <p>Understand C from basics to advanced topics with examples.</p>
+        <a class="btn btn-primary" href="#">Start Learning</a>
+      </article>
+
+      <article class="card">
+        <h3>💻 Practice</h3>
+        <p>Write and run your C code in an online editor with feedback.</p>
+        <a class="btn btn-primary" href="#">Start Practicing</a>
+      </article>
+
+      <article class="card">
+        <h3>📝 Quiz</h3>
+        <p>Test your knowledge with timed quizzes and instant results.</p>
+        <a class="btn btn-primary" href="#">Start Quiz</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© <span id="year"></span> DevVerse — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Simple mobile menu toggle — safe and won't cause horizontal overflow
+    (function(){
+      const hambtn = document.getElementById('hambtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      function openMenu() {
+        mobileNav.style.display = 'block';
+        hambtn.setAttribute('aria-expanded','true');
+        mobileNav.setAttribute('aria-hidden','false');
+      }
+      function closeMenu() {
+        mobileNav.style.display = 'none';
+        hambtn.setAttribute('aria-expanded','false');
+        mobileNav.setAttribute('aria-hidden','true');
+      }
+
+      // start closed
+      closeMenu();
+
+      hambtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (mobileNav.style.display === 'block') closeMenu(); else openMenu();
+      });
+
+      // close if clicking outside navigation on small screens
+      document.addEventListener('click', function(e){
+        const target = e.target;
+        if (window.innerWidth < 720 && mobileNav.style.display === 'block') {
+          if (!mobileNav.contains(target) && !hambtn.contains(target)) closeMenu();
+        }
+      });
+
+      // ensure correct state when resizing
+      window.addEventListener('resize', function(){
+        if (window.innerWidth >= 720) {
+          // hide mobile nav and ensure desktop nav shows
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrays in C - Quiz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    }
+    .header {
+      background-color: #2196f3;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      position: relative;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+    .timer {
+      position: absolute;
+      right: 20px;
+      top: 35px;
+      font-size: 18px;
+      color: #ffcccc;
+    }
+    .quiz-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    .question-card {
+      background-color: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .question-card p {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .question-card label {
+      display: block;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+    button {
+      padding: 12px 25px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .submit-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+    .try-again-btn {
+      background-color: #ff9800;
+      color: white;
+      display: none;
+    }
+    .back-btn {
+      background-color: #add8e6;
+      color: black;
+    }
+    #result {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Arrays in C - Quiz</h1>
+    <div class="timer" id="timer">15:00</div>
+  </div>
+
+  <div class="quiz-container">
+    <form id="quizForm">
+
+      <!-- Q1 -->
+      <div class="question-card">
+        <p>1. What is the index of the first element in an array?</p>
+        <label><input type="radio" name="q1" value="a"> 0</label>
+        <label><input type="radio" name="q1" value="b"> 1</label>
+        <label><input type="radio" name="q1" value="c"> -1</label>
+        <label><input type="radio" name="q1" value="d"> 2</label>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-card">
+        <p>2. Which data structure is used to store multiple values of the same type?</p>
+        <label><input type="radio" name="q2" value="a"> Structure</label>
+        <label><input type="radio" name="q2" value="b"> Pointer</label>
+        <label><input type="radio" name="q2" value="c"> Array</label>
+        <label><input type="radio" name="q2" value="d"> Enum</label>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-card">
+        <p>3. What will be the output of this code: <code>int arr[3] = {1,2}; printf("%d", arr[2]);</code>?</p>
+        <label><input type="radio" name="q3" value="a"> 1</label>
+        <label><input type="radio" name="q3" value="b"> 2</label>
+        <label><input type="radio" name="q3" value="c"> 0</label>
+        <label><input type="radio" name="q3" value="d"> Garbage value</label>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-card">
+        <p>4. What is the size of array <code>int a[5]</code> (assuming int=4 bytes)?</p>
+        <label><input type="radio" name="q4" value="a"> 10 bytes</label>
+        <label><input type="radio" name="q4" value="b"> 20 bytes</label>
+        <label><input type="radio" name="q4" value="c"> 5 bytes</label>
+        <label><input type="radio" name="q4" value="d"> Depends on OS</label>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-card">
+        <p>5. Array index starts from?</p>
+        <label><input type="radio" name="q5" value="a"> 1</label>
+        <label><input type="radio" name="q5" value="b"> 0</label>
+        <label><input type="radio" name="q5" value="c"> -1</label>
+        <label><input type="radio" name="q5" value="d"> Depends</label>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question-card">
+        <p>6. Which header file is needed to use arrays in C?</p>
+        <label><input type="radio" name="q6" value="a"> stdlib.h</label>
+        <label><input type="radio" name="q6" value="b"> stdio.h</label>
+        <label><input type="radio" name="q6" value="c"> string.h</label>
+        <label><input type="radio" name="q6" value="d"> No header needed</label>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question-card">
+        <p>7. What is the correct syntax to declare an array?</p>
+        <label><input type="radio" name="q7" value="a"> int arr;</label>
+        <label><input type="radio" name="q7" value="b"> array int arr[10];</label>
+        <label><input type="radio" name="q7" value="c"> int arr[10];</label>
+        <label><input type="radio" name="q7" value="d"> int arr{10};</label>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question-card">
+        <p>8. What is the output of: <code>int arr[] = {1,2,3}; printf("%d", sizeof(arr)/sizeof(arr[0]));</code>?</p>
+        <label><input type="radio" name="q8" value="a"> 6</label>
+        <label><input type="radio" name="q8" value="b"> 3</label>
+        <label><input type="radio" name="q8" value="c"> 12</label>
+        <label><input type="radio" name="q8" value="d"> 4</label>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question-card">
+        <p>9. Can array elements be of different data types?</p>
+        <label><input type="radio" name="q9" value="a"> Yes</label>
+        <label><input type="radio" name="q9" value="b"> No</label>
+        <label><input type="radio" name="q9" value="c"> Sometimes</label>
+        <label><input type="radio" name="q9" value="d"> Depends on Compiler</label>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question-card">
+        <p>10. What is the default value of elements in an int array?</p>
+        <label><input type="radio" name="q10" value="a"> 0</label>
+        <label><input type="radio" name="q10" value="b"> 1</label>
+        <label><input type="radio" name="q10" value="c"> Garbage</label>
+        <label><input type="radio" name="q10" value="d"> NULL</label>
+      </div>
+
+      <!-- Q11 -->
+      <div class="question-card">
+        <p>11. Which operator is used to access array elements?</p>
+        <label><input type="radio" name="q11" value="a"> ()</label>
+        <label><input type="radio" name="q11" value="b"> {}</label>
+        <label><input type="radio" name="q11" value="c"> []</label>
+        <label><input type="radio" name="q11" value="d"> &lt;&gt;</label>
+      </div>
+
+      <!-- Q12 -->
+      <div class="question-card">
+        <p>12. Which of the following is a valid array declaration?</p>
+        <label><input type="radio" name="q12" value="a"> int 1arr[10];</label>
+        <label><input type="radio" name="q12" value="b"> int arr[] = {10,20};</label>
+        <label><input type="radio" name="q12" value="c"> int arr(10);</label>
+        <label><input type="radio" name="q12" value="d"> array arr[10];</label>
+      </div>
+
+      <!-- Q13 -->
+      <div class="question-card">
+        <p>13. What is the index of last element in array of size 5?</p>
+        <label><input type="radio" name="q13" value="a"> 4</label>
+        <label><input type="radio" name="q13" value="b"> 5</label>
+        <label><input type="radio" name="q13" value="c"> 6</label>
+        <label><input type="radio" name="q13" value="d"> 10</label>
+      </div>
+
+      <!-- Q14 -->
+      <div class="question-card">
+        <p>14. Which keyword is used for declaring array?</p>
+        <label><input type="radio" name="q14" value="a"> array</label>
+        <label><input type="radio" name="q14" value="b"> list</label>
+        <label><input type="radio" name="q14" value="c"> int</label>
+        <label><input type="radio" name="q14" value="d"> type</label>
+      </div>
+
+      <!-- Q15 -->
+      <div class="question-card">
+        <p>15. Arrays can be?</p>
+        <label><input type="radio" name="q15" value="a"> One-dimensional</label>
+        <label><input type="radio" name="q15" value="b"> Multi-dimensional</label>
+        <label><input type="radio" name="q15" value="c"> Jagged</label>
+        <label><input type="radio" name="q15" value="d"> All of the above</label>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+        <button type="button" class="try-again-btn" onclick="location.reload()" id="tryAgainBtn">Try Again</button>
+		<a href="/quiz">⬅ Back to Quiz Topics</a>
+		</footer>
+      </div>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let timeLeft = 900; 
+    const timerElement = document.getElementById("timer");
+    const interval = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      timeLeft--;
+      if (timeLeft < 0) {
+        clearInterval(interval);
+        submitQuiz();
+      }
+    }, 1000);
+
+    function submitQuiz() {
+      clearInterval(interval);
+      let score = 0;
+      const correctAnswers = ["a", "c", "d", "b", "b", "d", "c", "b", "b", "c", "c", "b", "a", "c", "d"];
+      for (let i = 1; i <= 15; i++) {
+        const q = document.querySelector(`input[name="q${i}"]:checked`);
+        if (q && q.value === correctAnswers[i - 1]) {
+          score++;
+        }
+      }
+      const result = document.getElementById("result");
+      const tryAgainBtn = document.getElementById("tryAgainBtn");
+      if (score <= 5) {
+        result.textContent = `Your Score: ${score}/15 — Fail 😞`;
+        result.style.color = "red";
+      } else {
+        result.textContent = `Your Score: ${score}/15 — Great! 🎉`;
+        result.style.color = "green";
+      }
+      tryAgainBtn.style.display = "inline-block";
+    }
+  </script>
+</body>
+</html>

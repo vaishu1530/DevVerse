@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to C | DevVerse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1565c0, #42a5f5);
+            color: white;
+            padding: 2em;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 2em;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            color: #1e88e5;
+        }
+
+        p {
+            line-height: 1.7;
+            margin: 1em 0;
+        }
+
+        .btn-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2em;
+        }
+
+        .btn {
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-back {
+            background: #eeeeee;
+            color: #333;
+        }
+
+        .btn-next {
+            background: #1e88e5;
+            color: white;
+        }
+
+        .btn-back:hover {
+            background: #d7d7d7;
+        }
+
+        .btn-next:hover {
+            background: #1565c0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .btn-row {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📘 Introduction to C Programming</h1>
+</header>
+
+<div class="container">
+    <h2 class="section-title">What is C Language?</h2>
+    <p>
+        C is a powerful, efficient, and fast programming language that forms the foundation for many modern languages like C++, Java, and Python. It was developed in the early 1970s by <strong>Dennis Ritchie</strong> at Bell Labs.
+    </p>
+    <p>
+        C is a **procedural programming language** known for its simplicity, performance, and close relationship to the hardware. Because of its speed and control, C is often used in system-level programming such as operating systems, embedded devices, compilers, and more.
+    </p>
+
+    <h2 class="section-title">Why Learn C?</h2>
+    <ul>
+        <li>✅ Foundation for learning other programming languages</li>
+        <li>✅ Great control over memory using pointers</li>
+        <li>✅ Used in real-world applications like OS, database systems, and IoT</li>
+        <li>✅ Helps understand low-level memory management</li>
+    </ul>
+
+    <h2 class="section-title">Key Features of C</h2>
+    <ul>
+        <li>🔹 Fast and efficient</li>
+        <li>🔹 Supports low-level (hardware access) and high-level features</li>
+        <li>🔹 Portable – code runs across platforms</li>
+        <li>🔹 Rich set of built-in operators and functions</li>
+        <li>🔹 Easy to extend with libraries</li>
+    </ul>
+
+    <h2 class="section-title">A Simple C Program</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, DevVerse!");
+    return 0;
+}</code></pre>
+
+    <div class="btn-row">
+        <a href="/learn" class="btn btn-back">⬅ Back to Topics</a>
+        <a href="/learn/variables" class="btn btn-next">Next: Variables ➡</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Types in C | DevVerse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1565c0, #42a5f5);
+            color: white;
+            padding: 2em;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 2em;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            color: #1e88e5;
+        }
+
+        p, li {
+            line-height: 1.7;
+            margin: 1em 0;
+        }
+
+        pre, code {
+            background-color: #f0f0f0;
+            color: #212121;
+            padding: 1em;
+            border-radius: 8px;
+            display: block;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        ul {
+            margin-left: 1.5em;
+        }
+
+        .btn-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2em;
+        }
+
+        .btn {
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-back {
+            background: #eeeeee;
+            color: #333;
+        }
+
+        .btn-next {
+            background: #1e88e5;
+            color: white;
+        }
+
+        .btn-back:hover {
+            background: #d7d7d7;
+        }
+
+        .btn-next:hover {
+            background: #1565c0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .btn-row {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📊 Data Types in C</h1>
+</header>
+
+<div class="container">
+    <h2 class="section-title">What are Data Types?</h2>
+    <p>
+        Data types specify the type of data a variable can hold. C language supports several built-in data types which are broadly categorized into:
+    </p>
+
+    <ul>
+        <li><strong>Basic data types</strong>: int, char, float, double</li>
+        <li><strong>Derived data types</strong>: array, pointer, structure, union</li>
+        <li><strong>Enumeration data type</strong>: enum</li>
+        <li><strong>Void data type</strong>: void (represents no value)</li>
+    </ul>
+
+    <h2 class="section-title">Syntax</h2>
+    <pre><code>data_type variable_name;</code></pre>
+
+    <h2 class="section-title">Example</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 25;
+    float height = 5.7;
+    char grade = 'A';
+    double pi = 3.14159265;
+
+    printf("Age: %d\\n", age);
+    printf("Height: %.1f\\n", height);
+    printf("Grade: %c\\n", grade);
+    printf("Value of Pi: %.8lf\\n", pi);
+
+    return 0;
+}</code></pre>
+
+    <h2 class="section-title">Explanation</h2>
+    <ul>
+        <li><strong>int</strong>: Stores integers (4 bytes)</li>
+        <li><strong>float</strong>: Stores floating-point numbers with less precision (4 bytes)</li>
+        <li><strong>double</strong>: Stores floating-point numbers with higher precision (8 bytes)</li>
+        <li><strong>char</strong>: Stores a single character (1 byte)</li>
+    </ul>
+
+    <p>Each data type consumes a different amount of memory and is used for specific purposes. Choosing the correct data type improves memory efficiency and performance.</p>
+
+    <div class="btn-row">
+        <a href="/learn/variables" class="btn btn-back">⬅ Back: Variables</a>
+        <a href="/learn/operators" class="btn btn-next">Next: Operators ➡</a>
+    </div>
+</div>
+
+</body>
+</html>

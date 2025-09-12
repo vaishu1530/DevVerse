@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard - Progress Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .progress-bar {
+            height: 30px;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: #28a745;
+            width: 0;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Your Progress Tracker</h1>
+        <p>You have completed <strong th:text="${completedTopics}"></strong> out of <strong th:text="${totalTopics}"></strong> topics.</p>
+
+        <div class="progress-bar">
+            <div class="progress-bar-fill"
+                 th:style="'width: ' + (${completedTopics} * 100 / ${totalTopics}) + '%'">
+                <span th:text="(${completedTopics} * 100 / ${totalTopics}) + '%'"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

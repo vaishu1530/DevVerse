@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Input and Output in C - Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f4f8;
+        }
+
+        .header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .timer {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .timer span {
+            color: red;
+        }
+
+        .quiz-container {
+            width: 95%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .question {
+            background-color: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            margin: 0 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 20px 10px 10px 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #back {
+            background-color: #add8e6; /* Light Blue */
+            color: black;
+        }
+
+        #submit {
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        #try-again {
+            display: none;
+            background-color: #ff7043;
+            color: white;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Input and Output in C - Quiz</div>
+    <div class="timer">Time Remaining: <span id="time">15:00</span></div>
+
+    <form id="quizForm" class="quiz-container">
+
+        <!-- Questions Start -->
+        <div class="question">
+            <h3>1. Which function is used for output in C?</h3>
+            <label><input type="radio" name="q1" value="a"> printf()</label><br>
+            <label><input type="radio" name="q1" value="b"> scanf()</label><br>
+            <label><input type="radio" name="q1" value="c"> cin</label><br>
+            <label><input type="radio" name="q1" value="d"> cout</label>
+        </div>
+
+        <div class="question">
+            <h3>2. Which function is used for input in C?</h3>
+            <label><input type="radio" name="q2" value="a"> printf()</label><br>
+            <label><input type="radio" name="q2" value="b"> scanf()</label><br>
+            <label><input type="radio" name="q2" value="c"> puts()</label><br>
+            <label><input type="radio" name="q2" value="d"> gets()</label>
+        </div>
+
+        <div class="question">
+            <h3>3. What is the format specifier for integer in printf?</h3>
+            <label><input type="radio" name="q3" value="a"> %f</label><br>
+            <label><input type="radio" name="q3" value="b"> %d</label><br>
+            <label><input type="radio" name="q3" value="c"> %c</label><br>
+            <label><input type="radio" name="q3" value="d"> %s</label>
+        </div>
+
+        <div class="question">
+            <h3>4. What is the format specifier for float?</h3>
+            <label><input type="radio" name="q4" value="a"> %d</label><br>
+            <label><input type="radio" name="q4" value="b"> %f</label><br>
+            <label><input type="radio" name="q4" value="c"> %c</label><br>
+            <label><input type="radio" name="q4" value="d"> %lf</label>
+        </div>
+
+        <div class="question">
+            <h3>5. Which function reads a single character?</h3>
+            <label><input type="radio" name="q5" value="a"> scanf()</label><br>
+            <label><input type="radio" name="q5" value="b"> getchar()</label><br>
+            <label><input type="radio" name="q5" value="c"> gets()</label><br>
+            <label><input type="radio" name="q5" value="d"> fread()</label>
+        </div>
+
+        <div class="question">
+            <h3>6. What is the return type of printf()?</h3>
+            <label><input type="radio" name="q6" value="a"> void</label><br>
+            <label><input type="radio" name="q6" value="b"> int</label><br>
+            <label><input type="radio" name="q6" value="c"> float</label><br>
+            <label><input type="radio" name="q6" value="d"> char</label>
+        </div>
+
+        <div class="question">
+            <h3>7. gets() is used to:</h3>
+            <label><input type="radio" name="q7" value="a"> output string</label><br>
+            <label><input type="radio" name="q7" value="b"> input single character</label><br>
+            <label><input type="radio" name="q7" value="c"> input string</label><br>
+            <label><input type="radio" name="q7" value="d"> output number</label>
+        </div>
+
+        <div class="question">
+            <h3>8. puts() is used to:</h3>
+            <label><input type="radio" name="q8" value="a"> input string</label><br>
+            <label><input type="radio" name="q8" value="b"> output string</label><br>
+            <label><input type="radio" name="q8" value="c"> input character</label><br>
+            <label><input type="radio" name="q8" value="d"> read file</label>
+        </div>
+
+        <div class="question">
+            <h3>9. What does %c represent?</h3>
+            <label><input type="radio" name="q9" value="a"> Character</label><br>
+            <label><input type="radio" name="q9" value="b"> Integer</label><br>
+            <label><input type="radio" name="q9" value="c"> String</label><br>
+            <label><input type="radio" name="q9" value="d"> Float</label>
+        </div>
+
+        <div class="question">
+            <h3>10. Which function is safer than gets()?</h3>
+            <label><input type="radio" name="q10" value="a"> puts()</label><br>
+            <label><input type="radio" name="q10" value="b"> fgets()</label><br>
+            <label><input type="radio" name="q10" value="c"> printf()</label><br>
+            <label><input type="radio" name="q10" value="d"> scanf()</label>
+        </div>
+
+        <div class="question">
+            <h3>11. scanf("%d", &x); – what does &x mean?</h3>
+            <label><input type="radio" name="q11" value="a"> Value of x</label><br>
+            <label><input type="radio" name="q11" value="b"> Address of x</label><br>
+            <label><input type="radio" name="q11" value="c"> Type of x</label><br>
+            <label><input type="radio" name="q11" value="d"> Reference of x</label>
+        </div>
+
+        <div class="question">
+            <h3>12. What is printed by printf("%d", 5+2);?</h3>
+            <label><input type="radio" name="q12" value="a"> 52</label><br>
+            <label><input type="radio" name="q12" value="b"> 7</label><br>
+            <label><input type="radio" name="q12" value="c"> %d</label><br>
+            <label><input type="radio" name="q12" value="d"> Error</label>
+        </div>
+
+        <div class="question">
+            <h3>13. What is the format specifier for string?</h3>
+            <label><input type="radio" name="q13" value="a"> %f</label><br>
+            <label><input type="radio" name="q13" value="b"> %d</label><br>
+            <label><input type="radio" name="q13" value="c"> %s</label><br>
+            <label><input type="radio" name="q13" value="d"> %x</label>
+        </div>
+
+        <div class="question">
+            <h3>14. What will printf("%c", 'A'); print?</h3>
+            <label><input type="radio" name="q14" value="a"> A</label><br>
+            <label><input type="radio" name="q14" value="b"> %c</label><br>
+            <label><input type="radio" name="q14" value="c"> Error</label><br>
+            <label><input type="radio" name="q14" value="d"> 65</label>
+        </div>
+
+        <div class="question">
+            <h3>15. getchar() returns a:</h3>
+            <label><input type="radio" name="q15" value="a"> character</label><br>
+            <label><input type="radio" name="q15" value="b"> integer</label><br>
+            <label><input type="radio" name="q15" value="c"> float</label><br>
+            <label><input type="radio" name="q15" value="d"> void</label>
+        </div>
+        <!-- Questions End -->
+
+        <div style="text-align:center;">
+            <button type="button" id="submit" onclick="submitQuiz()">Submit</button>
+			<a href="/quiz">⬅ Back to Quiz Topics</a>
+            <button id="try-again" onclick="location.reload()">Try Again</button>
+            <div id="result"></div>
+        </div>
+    </form>
+
+    <script>
+        // Timer logic
+        let totalTime = 15 * 60;
+        const timerElement = document.getElementById("time");
+
+        function updateTimer() {
+            const minutes = Math.floor(totalTime / 60);
+            const seconds = totalTime % 60;
+            timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            if (totalTime > 0) {
+                totalTime--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                submitQuiz();
+            }
+        }
+
+        updateTimer();
+
+        function submitQuiz() {
+            let score = 0;
+            const answers = ['a', 'b', 'b', 'b', 'b', 'b', 'c', 'b', 'a', 'b', 'b', 'b', 'c', 'a', 'a'];
+            for (let i = 1; i <= 15; i++) {
+                const radios = document.getElementsByName("q" + i);
+                for (let radio of radios) {
+                    if (radio.checked && radio.value === answers[i - 1]) {
+                        score++;
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML = (score > 5) ? `Great! Your score is ${score}/15` : `Fail! Your score is ${score}/15`;
+            document.getElementById("try-again").style.display = "inline-block";
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    </script>
+</body>
+</html>

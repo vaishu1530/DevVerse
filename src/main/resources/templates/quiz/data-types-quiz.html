@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Types in C - Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f5fa;
+        }
+
+        header {
+            background: #1e88e5;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .timer {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .question-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            color: black;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .try-again-btn {
+            background-color: #ffc107;
+            color: black;
+            display: none;
+        }
+
+        .back-btn {
+            background-color: #add8e6;
+            color: black;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Data Types in C - Quiz</h1>
+    <div class="timer">Time Remaining: <span id="time" class="red">15:00</span></div>
+</header>
+
+<div class="quiz-container" id="quizForm">
+    <!-- Question 1 to 15 -->
+    <div class="question-box">
+        <p class="question">1. What is the size of int on a 32-bit system?</p>
+        <label><input type="radio" name="q1" value="1"> 4 bytes</label><br>
+        <label><input type="radio" name="q1" value="0"> 2 bytes</label><br>
+        <label><input type="radio" name="q1" value="0"> 8 bytes</label><br>
+        <label><input type="radio" name="q1" value="0"> 1 byte</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">2. Which data type is used to store a single character?</p>
+        <label><input type="radio" name="q2" value="1"> char</label><br>
+        <label><input type="radio" name="q2" value="0"> int</label><br>
+        <label><input type="radio" name="q2" value="0"> float</label><br>
+        <label><input type="radio" name="q2" value="0"> double</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">3. What is the size of a float in C?</p>
+        <label><input type="radio" name="q3" value="1"> 4 bytes</label><br>
+        <label><input type="radio" name="q3" value="0"> 8 bytes</label><br>
+        <label><input type="radio" name="q3" value="0"> 2 bytes</label><br>
+        <label><input type="radio" name="q3" value="0"> 1 byte</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">4. Which of the following is a double data type?</p>
+        <label><input type="radio" name="q4" value="1"> double</label><br>
+        <label><input type="radio" name="q4" value="0"> float</label><br>
+        <label><input type="radio" name="q4" value="0"> int</label><br>
+        <label><input type="radio" name="q4" value="0"> short</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">5. Which data type is used for true/false values?</p>
+        <label><input type="radio" name="q5" value="1"> _Bool</label><br>
+        <label><input type="radio" name="q5" value="0"> int</label><br>
+        <label><input type="radio" name="q5" value="0"> float</label><br>
+        <label><input type="radio" name="q5" value="0"> char</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">6. Which format specifier is used for float?</p>
+        <label><input type="radio" name="q6" value="1"> %f</label><br>
+        <label><input type="radio" name="q6" value="0"> %d</label><br>
+        <label><input type="radio" name="q6" value="0"> %c</label><br>
+        <label><input type="radio" name="q6" value="0"> %lf</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">7. Which data type would you use for storing large integers?</p>
+        <label><input type="radio" name="q7" value="1"> long int</label><br>
+        <label><input type="radio" name="q7" value="0"> float</label><br>
+        <label><input type="radio" name="q7" value="0"> char</label><br>
+        <label><input type="radio" name="q7" value="0"> double</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">8. Which of the following is a user-defined data type?</p>
+        <label><input type="radio" name="q8" value="1"> enum</label><br>
+        <label><input type="radio" name="q8" value="0"> int</label><br>
+        <label><input type="radio" name="q8" value="0"> float</label><br>
+        <label><input type="radio" name="q8" value="0"> char</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">9. What is the size of double in C?</p>
+        <label><input type="radio" name="q9" value="1"> 8 bytes</label><br>
+        <label><input type="radio" name="q9" value="0"> 4 bytes</label><br>
+        <label><input type="radio" name="q9" value="0"> 2 bytes</label><br>
+        <label><input type="radio" name="q9" value="0"> 1 byte</label>
+    </div>
+
+    <div class="question-box">
+        <p class="question">10. Which of the following is NOT a primitive data type in C?</p>
+        <label><input type="radio" name="q10" value="1"> string</label><br>
+        <label><input type="radio" name="q10" value="0"> int</label><br>
+        <label><input type="radio" name="q10" value="0"> float</label><br>
+        <label><input type="radio" name="q10" value="0"> char</label>
+    </div>
+	
+	<div class="question-box">
+	        <p class="question">11. Which data type is used for true/false values?</p>
+	        <label><input type="radio" name="q5" value="1"> _Bool</label><br>
+	        <label><input type="radio" name="q5" value="0"> int</label><br>
+	        <label><input type="radio" name="q5" value="0"> float</label><br>
+	        <label><input type="radio" name="q5" value="0"> char</label>
+	    </div>
+
+	    <div class="question-box">
+	        <p class="question">12. Which format specifier is used for float?</p>
+	        <label><input type="radio" name="q6" value="1"> %f</label><br>
+	        <label><input type="radio" name="q6" value="0"> %d</label><br>
+	        <label><input type="radio" name="q6" value="0"> %c</label><br>
+	        <label><input type="radio" name="q6" value="0"> %lf</label>
+	    </div>
+
+	    <div class="question-box">
+	        <p class="question">13. Which data type would you use for storing large integers?</p>
+	        <label><input type="radio" name="q7" value="1"> long int</label><br>
+	        <label><input type="radio" name="q7" value="0"> float</label><br>
+	        <label><input type="radio" name="q7" value="0"> char</label><br>
+	        <label><input type="radio" name="q7" value="0"> double</label>
+	    </div>
+
+    <!-- Questions 11–15 follow same format -->
+    <!-- Replace these with any more 5 questions similarly -->
+
+    <!-- Example last question -->
+    <div class="question-box">
+        <p class="question">15. Which specifier is used for printing long int?</p>
+        <label><input type="radio" name="q15" value="1"> %ld</label><br>
+        <label><input type="radio" name="q15" value="0"> %d</label><br>
+        <label><input type="radio" name="q15" value="0"> %f</label><br>
+        <label><input type="radio" name="q15" value="0"> %c</label>
+    </div>
+
+    <div class="buttons">
+    <button class="btn try-again-btn" onclick="location.reload()">Try Again</button>
+             <button class="btn submit-btn" onclick="submitQuiz()">Submit</button>
+			 <a href="/quiz">⬅ Back to Introduction Quiz</a>
+    </div>
+    <div class="result" id="resultBox"></div>
+</div>
+
+<script>
+    let totalTime = 15 * 60;
+    const timerDisplay = document.getElementById('time');
+
+    function startTimer() {
+        const timer = setInterval(() => {
+            let minutes = Math.floor(totalTime / 60);
+            let seconds = totalTime % 60;
+            timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            totalTime--;
+            if (totalTime < 0) {
+                clearInterval(timer);
+                submitQuiz();
+            }
+        }, 1000);
+    }
+
+    function submitQuiz() {
+        let score = 0;
+        for (let i = 1; i <= 15; i++) {
+            let q = document.querySelector(`input[name="q${i}"]:checked`);
+            if (q && q.value === "1") score++;
+        }
+
+        let resultText = score > 5 ? "Great Job! 🎉" : "You Failed. Try Again!";
+        document.getElementById("resultBox").textContent = `Your Score: ${score}/15 - ${resultText}`;
+        document.getElementById("resultBox").style.display = "block";
+        document.querySelector(".try-again-btn").style.display = "inline-block";
+    }
+
+    window.onload = startTimer;
+</script>
+
+</body>
+</html>

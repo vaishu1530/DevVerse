@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | DevVerse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .contact-container {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .contact-container label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .contact-container input::placeholder,
+        .contact-container textarea::placeholder {
+            color: #bbb;
+        }
+
+        .contact-container button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .contact-container button:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #28a745;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .thank-you-message {
+            text-align: center;
+            color: #28a745;
+            font-size: 1.1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="contact-container">
+    <h2>Contact DevVerse</h2>
+    <form id="contactForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="thank-you-message" id="thankYouMessage">
+        🎉 Thank you for contacting us! We’ll get back to you soon.
+    </div>
+
+    <a href="javascript:history.back()" class="back-link">← Back</a>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill out all fields correctly.");
+            return;
+        }
+
+        // Mock behavior (pretend to send without backend)
+        setTimeout(() => {
+            document.getElementById("contactForm").style.display = "none";
+            document.getElementById("thankYouMessage").style.display = "block";
+        }, 500);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>C Quiz Topics | DevVerse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #eef1f5;
+            color: #333;
+        }
+
+        header {
+            background: #1e88e5;
+            color: white;
+            padding: 1.5em;
+            text-align: center;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .topic-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-list li {
+            background: white;
+            margin: 0.5em 0;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .topic-list li a {
+            text-decoration: none;
+            color: #1e88e5;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #e0e0e0;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🧠 C Language Quizzes</h1>
+    <p>Select a topic below to test your knowledge:</p>
+</header>
+
+<main>
+    <ul class="topic-list">
+        <li><a th:href="@{/quiz/introduction}">Introduction to C</a></li>
+        <li><a th:href="@{/quiz/variables}"> Variables</a></li>
+		<li><a th:href="@{/quiz/data-types}"> Data types</a></li>
+        <li><a th:href="@{/quiz/operators}">Operators and Expressions</a></li>
+        <li><a th:href="@{/quiz/input-output}">Input and Output in C</a></li>
+        <li><a th:href="@{/quiz/control-flow}">Control Flow</a></li>
+        <li><a th:href="@{/quiz/loops}">Loops</a></li>
+        <li><a th:href="@{/quiz/functions}">Functions</a></li>
+        <li><a th:href="@{/quiz/arrays}">Arrays</a></li>
+        <li><a th:href="@{/quiz/strings}">Strings</a></li>
+        <li><a th:href="@{/quiz/pointers}">Pointers</a></li>
+        <li><a th:href="@{/quiz/structures}">Structures and Unions</a></li>
+        <li><a th:href="@{/quiz/memory}">Dynamic Memory Allocation</a></li>
+        <li><a th:href="@{/quiz/file-handling}">File Handling</a></li>
+        <li><a th:href="@{/quiz/recursion}">Recursion</a></li>
+        <li><a th:href="@{/quiz/storage-classes}">Storage Classes</a></li>
+        <li><a th:href="@{/quiz/enum}">Enumerations (enum)</a></li>
+        <li><a th:href="@{/quiz/preprocessor}">Preprocessor Directives</a></li>
+        <li><a th:href="@{/quiz/bitwise}">Bitwise Operators</a></li>
+        <li><a th:href="@{/quiz/type-casting}">Type Casting</a></li>
+        <li><a th:href="@{/quiz/command-line}">Command-Line Arguments</a></li>
+        <li><a th:href="@{/quiz/revision}">Final Revision / Mixed Questions</a></li>
+    </ul>
+</main>
+
+<footer>
+    <a href="/">⬅ Back to Home</a>
+</footer>
+
+</body>
+</html>

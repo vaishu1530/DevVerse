@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Operators in C | DevVerse</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: #222;
+    }
+
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 2em;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 2em;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #0d47a1;
+      margin-top: 1em;
+    }
+
+    pre {
+      background-color: #f9f9f9;
+      border-left: 5px solid #0d47a1;
+      padding: 1em;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+
+    .diagram {
+      background: #e3f2fd;
+      padding: 1em;
+      margin: 1.5em 0;
+      border-left: 5px solid #0d47a1;
+      border-radius: 8px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2em;
+    }
+
+    .btn {
+      padding: 0.7em 1.4em;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn-back {
+      background-color: #eeeeee;
+      color: #333;
+    }
+
+    .btn-back:hover {
+      background-color: #cccccc;
+    }
+
+    .btn-next {
+      background-color: #0d47a1;
+      color: white;
+    }
+
+    .btn-next:hover {
+      background-color: #08306b;
+    }
+
+    @media screen and (max-width: 768px) {
+      .btn-row {
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🔣 Operators in C</h1>
+</header>
+
+<div class="container">
+  <h2>What are Operators?</h2>
+  <p>Operators are special symbols used to perform operations on variables and values in C. They are essential to writing expressions and controlling logic flow in a program.</p>
+
+  <div class="diagram">
+    <strong>Categories of Operators in C:</strong>
+    <ul>
+      <li>✅ Arithmetic: <code>+ - * / %</code></li>
+      <li>✅ Relational: <code>== != &gt; &lt; &gt;= &lt;=</code></li>
+      <li>✅ Logical: <code>&& || !</code></li>
+      <li>✅ Assignment: <code>= += -= *= /=</code></li>
+      <li>✅ Increment/Decrement: <code>++ --</code></li>
+      <li>✅ Bitwise: <code>& | ^ ~ &lt;&lt; &gt;&gt;</code></li>
+    </ul>
+  </div>
+
+  <h2>Syntax</h2>
+  <pre><code>result = a + b;</code></pre>
+
+  <h2>Example</h2>
+  <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 5;
+
+    printf("Addition: %d\\n", a + b);
+    printf("Subtraction: %d\\n", a - b);
+    printf("Multiplication: %d\\n", a * b);
+    printf("Division: %d\\n", a / b);
+    printf("Modulus: %d\\n", a % b);
+
+    return 0;
+}</code></pre>
+
+  <h2>Explanation</h2>
+  <ul>
+    <li><strong>+</strong>: Adds two numbers</li>
+    <li><strong>-</strong>: Subtracts the second number from the first</li>
+    <li><strong>*</strong>: Multiplies two numbers</li>
+    <li><strong>/</strong>: Divides the first number by the second</li>
+    <li><strong>%</strong>: Gives the remainder of division</li>
+  </ul>
+
+  <p>Other operators like relational, logical, and bitwise are used in decision-making and complex expressions.</p>
+
+  <div class="btn-row">
+    <a href="/learn/datatypes" class="btn btn-back">⬅ Back: Data Types</a>
+    <a href="/learn/control-statements" class="btn btn-next">Next: Control Statements ➡</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enum in C</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: white;
+            color: #000;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #0d47a1;
+            border-bottom: 3px solid #0d47a1;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .code-box {
+            background-color: #e3f2fd;
+            border-left: 6px solid #0d47a1;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .nav-buttons a {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enum in C</h1>
+
+    <div class="section">
+        <p>
+            An <strong>enum</strong> (short for <em>enumeration</em>) in C is a user-defined type that consists of named integer constants. Enums help make a program more readable by using meaningful names instead of numbers.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Syntax</h2>
+        <div class="code-box">
+enum enum_name {
+    constant1,
+    constant2,
+    constant3,
+    ...
+};
+        </div>
+        <p>
+            By default, the value of the first constant is 0, the next is 1, and so on. You can also assign custom values.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Example: Weekdays Enum</h2>
+        <div class="code-box">
+#include &lt;stdio.h&gt;
+
+enum Weekday {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+};
+
+int main() {
+    enum Weekday today;
+    today = WEDNESDAY;
+
+    if (today == WEDNESDAY) {
+        printf("Mid-week day\\n");
+    }
+    return 0;
+}
+        </div>
+        <p><strong>Output:</strong><br>Mid-week day</p>
+    </div>
+
+    <div class="section">
+        <h2>Custom Values in Enum</h2>
+        <div class="code-box">
+enum Level {
+    LOW = 1,
+    MEDIUM = 5,
+    HIGH = 10
+};
+        </div>
+        <p>Here, <code>LOW</code> is 1, <code>MEDIUM</code> is 5, and <code>HIGH</code> is 10.</p>
+    </div>
+
+    <div class="section">
+        <h2>Advantages of Using Enum</h2>
+        <ul>
+            <li>Makes the code more readable and maintainable.</li>
+            <li>Helps in grouping related constants together.</li>
+            <li>Reduces chances of assigning invalid values (compared to raw integers).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Tips</h2>
+        <ul>
+            <li>Use enums when variables can only take a limited set of values.</li>
+            <li>You can also use enums in <code>switch</code> statements.</li>
+            <li>Enums are usually stored as integers.</li>
+        </ul>
+    </div>
+
+    <div class="nav-buttons">
+        <a th:href="@{/learn/storage-classes}">Back storage classes</a>
+        <a th:href="@{/learn/functions}">Next to functions</a>
+    </div>
+
+</body>
+</html>

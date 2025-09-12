@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pointers in C - Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f0f2f5; }
+    .header { background: #1e88e5; color: white; text-align: center; padding: 30px 20px; }
+    .container { max-width: 900px; margin: 20px auto; }
+    .question-card { background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 20px; }
+    .question-card h3 { margin: 0 0 10px; color: black; }
+    .timer { color: red; font-weight: bold; }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    .back-btn { background: lightblue; color: black; }
+    .try-again-btn { background: orange; color: white; display: none; }
+    .result { font-size: 22px; text-align: center; margin: 20px 0; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Pointers in C - Quiz</h1>
+    <p>Time Remaining: <span id="timer" class="timer">15:00</span></p>
+  </div>
+
+  <div class="container">
+    <form id="quizForm">
+      <div class="question-card">
+        <h3>1. What does a pointer store?</h3>
+        <label><input type="radio" name="q1" value="b"> Address of another variable</label><br>
+        <label><input type="radio" name="q1" value="a"> Actual value</label><br>
+        <label><input type="radio" name="q1" value="c"> Data type</label><br>
+        <label><input type="radio" name="q1" value="d"> Function name</label>
+      </div>
+      
+      <div class="question-card">
+        <h3>2. Which operator gives the address of a variable?</h3>
+        <label><input type="radio" name="q2" value="a"> &amp;</label><br>
+        <label><input type="radio" name="q2" value="b"> *</label><br>
+        <label><input type="radio" name="q2" value="c"> #</label><br>
+        <label><input type="radio" name="q2" value="d"> @</label>
+      </div>
+
+      <div class="question-card">
+        <h3>3. Which operator is used to access the value pointed by a pointer?</h3>
+        <label><input type="radio" name="q3" value="b"> *</label><br>
+        <label><input type="radio" name="q3" value="a"> &amp;</label><br>
+        <label><input type="radio" name="q3" value="c"> %</label><br>
+        <label><input type="radio" name="q3" value="d"> $</label>
+      </div>
+
+      <div class="question-card">
+        <h3>4. What is the output of printf("%d", *p); if p points to int x=5?</h3>
+        <label><input type="radio" name="q4" value="a"> 5</label><br>
+        <label><input type="radio" name="q4" value="b"> Address of p</label><br>
+        <label><input type="radio" name="q4" value="c"> Garbage value</label><br>
+        <label><input type="radio" name="q4" value="d"> Error</label>
+      </div>
+
+      <div class="question-card">
+        <h3>5. What is a NULL pointer?</h3>
+        <label><input type="radio" name="q5" value="a"> Pointer not assigned any address</label><br>
+        <label><input type="radio" name="q5" value="b"> Pointer pointing to zero</label><br>
+        <label><input type="radio" name="q5" value="c"> Pointer pointing to garbage</label><br>
+        <label><input type="radio" name="q5" value="d"> Invalid pointer</label>
+      </div>
+
+      <div class="question-card">
+        <h3>6. Which keyword is used to declare a pointer?</h3>
+        <label><input type="radio" name="q6" value="a"> *</label><br>
+        <label><input type="radio" name="q6" value="b"> &amp;</label><br>
+        <label><input type="radio" name="q6" value="c"> ptr</label><br>
+        <label><input type="radio" name="q6" value="d"> ref</label>
+      </div>
+
+      <div class="question-card">
+        <h3>7. What does pointer arithmetic allow?</h3>
+        <label><input type="radio" name="q7" value="a"> Moving to next memory location</label><br>
+        <label><input type="radio" name="q7" value="b"> Changing data type</label><br>
+        <label><input type="radio" name="q7" value="c"> Changing address type</label><br>
+        <label><input type="radio" name="q7" value="d"> Nothing</label>
+      </div>
+
+      <div class="question-card">
+        <h3>8. What is the size of a pointer on a 64-bit system?</h3>
+        <label><input type="radio" name="q8" value="b"> 8 bytes</label><br>
+        <label><input type="radio" name="q8" value="a"> 4 bytes</label><br>
+        <label><input type="radio" name="q8" value="c"> 2 bytes</label><br>
+        <label><input type="radio" name="q8" value="d"> 1 byte</label>
+      </div>
+
+      <div class="question-card">
+        <h3>9. What is dangling pointer?</h3>
+        <label><input type="radio" name="q9" value="a"> Pointer pointing to freed memory</label><br>
+        <label><input type="radio" name="q9" value="b"> Pointer pointing to NULL</label><br>
+        <label><input type="radio" name="q9" value="c"> Uninitialized pointer</label><br>
+        <label><input type="radio" name="q9" value="d"> Constant pointer</label>
+      </div>
+
+      <div class="question-card">
+        <h3>10. Can pointers point to functions?</h3>
+        <label><input type="radio" name="q10" value="a"> Yes</label><br>
+        <label><input type="radio" name="q10" value="b"> No</label><br>
+        <label><input type="radio" name="q10" value="c"> Only on some systems</label><br>
+        <label><input type="radio" name="q10" value="d"> Only in C++</label>
+      </div>
+
+      <div class="question-card">
+        <h3>11. Which pointer type can store address of any data type?</h3>
+        <label><input type="radio" name="q11" value="a"> void *</label><br>
+        <label><input type="radio" name="q11" value="b"> int *</label><br>
+        <label><input type="radio" name="q11" value="c"> char *</label><br>
+        <label><input type="radio" name="q11" value="d"> float *</label>
+      </div>
+
+      <div class="question-card">
+        <h3>12. What is wild pointer?</h3>
+        <label><input type="radio" name="q12" value="a"> Uninitialized pointer</label><br>
+        <label><input type="radio" name="q12" value="b"> Pointer pointing to NULL</label><br>
+        <label><input type="radio" name="q12" value="c"> Pointer to pointer</label><br>
+        <label><input type="radio" name="q12" value="d"> Constant pointer</label>
+      </div>
+
+      <div class="question-card">
+        <h3>13. How do you declare pointer to pointer?</h3>
+        <label><input type="radio" name="q13" value="a"> int **ptr;</label><br>
+        <label><input type="radio" name="q13" value="b"> int &amp;ptr;</label><br>
+        <label><input type="radio" name="q13" value="c"> int *ptr;</label><br>
+        <label><input type="radio" name="q13" value="d"> int ptr;</label>
+      </div>
+
+      <div class="question-card">
+        <h3>14. Which of these is correct way to assign pointer?</h3>
+        <label><input type="radio" name="q14" value="a"> p = &amp;x;</label><br>
+        <label><input type="radio" name="q14" value="b"> p = *x;</label><br>
+        <label><input type="radio" name="q14" value="c"> p = x;</label><br>
+        <label><input type="radio" name="q14" value="d"> p = &amp;p;</label>
+      </div>
+
+      <div class="question-card">
+        <h3>15. Which function deallocates memory allocated by malloc()?</h3>
+        <label><input type="radio" name="q15" value="a"> free()</label><br>
+        <label><input type="radio" name="q15" value="b"> delete()</label><br>
+        <label><input type="radio" name="q15" value="c"> remove()</label><br>
+        <label><input type="radio" name="q15" value="d"> clear()</label>
+      </div>
+
+      <div class="result" id="result"></div>
+      <div style="text-align:center;">
+        <button type="button" class="btn try-again-btn" id="tryAgainBtn" onclick="location.reload()">Try Again</button><br><br>
+        <a href="/quiz-topics" class="btn back-btn">Back to Quiz Topics</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    let timeLeft = 15 * 60;
+    const timerDisplay = document.getElementById('timer');
+    const timer = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      timeLeft--;
+      if (timeLeft < 0) {
+        clearInterval(timer);
+        checkAnswers();
+      }
+    }, 1000);
+
+    function checkAnswers() {
+      let score = 0;
+      const answers = { q1:'b', q2:'a', q3:'b', q4:'a', q5:'a', q6:'a', q7:'a', q8:'b', q9:'a', q10:'a', q11:'a', q12:'a', q13:'a', q14:'a', q15:'a' };
+      for (let i = 1; i <= 15; i++) {
+        const radios = document.getElementsByName(`q${i}`);
+        for (let radio of radios) {
+          if (radio.checked && radio.value === answers[`q${i}`]) score++;
+        }
+      }
+      document.getElementById('result').textContent = score > 5 ? `Great! Your score is ${score}/15` : `Fail! Your score is ${score}/15`;
+      document.getElementById('tryAgainBtn').style.display = 'inline-block';
+    }
+  </script>
+</body>
+</html>
